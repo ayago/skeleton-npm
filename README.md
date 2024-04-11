@@ -1,0 +1,1 @@
+# Skeleton NPM: A skeleton project for creating npm package with Typescript, CommonJS, and ES6 support
