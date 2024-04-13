@@ -1,0 +1,1 @@
+export { minifyHTML } from './modules/vanilla.module';
