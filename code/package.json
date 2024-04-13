@@ -9,7 +9,6 @@
     "type": "module",
     "types": "src/index.d.ts",
     "scripts": {
-      "test": "jasmine",
       "preinstall": "node build.js && tsc"
     },
     "repository": {
