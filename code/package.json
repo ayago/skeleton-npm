@@ -14,7 +14,7 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/ayago/html-ut.git"
+      "url": "git+https://github.com/ayago/skeleton-npm.git"
     },
     "keywords": [
       "npm",
@@ -25,9 +25,9 @@
     "author": "Adrian Yago",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/ayago/html-ut/issues"
+      "url": "https://github.com/ayago/skeleton-npm/issues"
     },
-    "homepage": "https://github.com/ayago/html-ut#readme",
+    "homepage": "https://github.com/ayago/skeleton-npm#readme",
     "devDependencies": {
       "esbuild": "0.20.2",
       "esbuild-plugin-clean": "^1.0.1",
