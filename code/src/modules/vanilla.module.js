@@ -1,5 +1,5 @@
-function minifyHTML(html){
-    return html.replace(/>( |\n|\t)*</g, '><').trim();
+function createHelloGreeting(name){
+    return `Hello ${name}`;
 }
 
-export { minifyHTML };
+export { createHelloGreeting };

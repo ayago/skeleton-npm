@@ -1,3 +1,3 @@
-import { minifyHTML } from './modules/vanilla.module.js';
+import { createHelloGreeting } from './modules/vanilla.module.js';
 
-export { minifyHTML };
+export { createHelloGreeting };

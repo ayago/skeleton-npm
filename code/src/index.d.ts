@@ -1,1 +1,1 @@
-export { minifyHTML } from './modules/vanilla.module';
+export { createHelloGreeting } from './modules/vanilla.module';

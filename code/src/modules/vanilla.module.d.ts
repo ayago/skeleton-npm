@@ -1,3 +1,3 @@
-declare function minifyHTML(html: string): string;
+declare function createHelloGreeting(html: string): string;
 
-export { minifyHTML };
+export { createHelloGreeting };
