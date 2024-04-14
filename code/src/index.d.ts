@@ -1,1 +1,1 @@
-export { createHelloGreeting } from './modules/vanilla.module';
+export { createHelloGreeting } from './modules/greeter.module';

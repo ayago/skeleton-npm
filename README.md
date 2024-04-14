@@ -51,7 +51,7 @@ This should have generated a file called `package.json`
 4. Inside `modules` directory create a file called `greeter.module.js`. Inside, type the following
 
 ```
-function createHelloGreeting(name){ zxzzxz
+function createHelloGreeting(name){
     return `Hello ${name}`;
 }
 
@@ -94,4 +94,38 @@ NodeJS will use ES6 module mechansim if the Javascript file has a suffix `.mjs`.
 
 ### Adding Typescript support
 
-To support Typescript, we can take advantage of typescript definitions
+To support Typescript, we can take advantage of typescript definitions. Definitions provide type information about entities in JavaScript code. They are used by the TypeScript compiler to understand the shape of JavaScript libraries and enable type-checking when using those libraries in TypeScript projects.
+
+1. Install typescript as development dependency `npm install --save-dev typescript`
+2. Create a simple typescript configuration file (`tsconfig.json`) in the project root and enable declarations
+
+```
+{
+  "compilerOptions": {
+    "declaration": true
+  }
+}
+```
+
+3. Create definition files `.d.ts` for all exporting `.js`files
+
+```
+//greeter.module.d.ts
+declare function createHelloGreeting(html: string): string;
+
+export { createHelloGreeting };
+```
+
+```
+//index.d.ts
+export { createHelloGreeting } from './modules/greeter.module';
+```
+
+4. Specify the definitions root in npm package definition
+
+```
+//package.json. Other properties removed for brevity
+{
+    "types": "src/index.d.ts"
+}
+```
