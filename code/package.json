@@ -9,7 +9,7 @@
     "type": "module",
     "types": "src/index.d.ts",
     "scripts": {
-      "preinstall": "node build.js && tsc"
+      "preinstall": "node build.js"
     },
     "repository": {
       "type": "git",
@@ -29,8 +29,7 @@
     "homepage": "https://github.com/ayago/skeleton-npm#readme",
     "devDependencies": {
       "esbuild": "0.20.2",
-      "esbuild-plugin-clean": "^1.0.1",
-      "typescript": "^5.4.4"
+      "esbuild-plugin-clean": "^1.0.1"
     }
   }
   
