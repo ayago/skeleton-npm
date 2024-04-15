@@ -1,4 +1,4 @@
-# Skeleton NPM: A skeleton project for publishing an npm package with Typescript, ES6, and CommonJS support
+# Publishing an npm package with Typescript, ES6, and CommonJS support
 
 This project serves two purposes:
 
@@ -96,18 +96,7 @@ NodeJS will use ES6 module mechansim if the Javascript file has a suffix `.mjs`.
 
 To support Typescript, we can take advantage of typescript definitions. Definitions provide type information about entities in JavaScript code. They are used by the TypeScript compiler to understand the shape of JavaScript libraries and enable type-checking when using those libraries in TypeScript projects.
 
-1. Install typescript as development dependency `npm install --save-dev typescript`
-2. Create a simple typescript configuration file (`tsconfig.json`) in the project root and enable declarations
-
-```
-{
-  "compilerOptions": {
-    "declaration": true
-  }
-}
-```
-
-3. Create definition files `.d.ts` for all exporting `.js`files
+1. Create definition files `.d.ts` for all exporting `.js`files
 
 ```
 //greeter.module.d.ts
@@ -121,7 +110,7 @@ export { createHelloGreeting };
 export { createHelloGreeting } from './modules/greeter.module';
 ```
 
-4. Specify the definitions root in npm package definition
+2. Specify the definitions entry point in npm package definition
 
 ```
 //package.json. Other properties removed for brevity
@@ -129,3 +118,11 @@ export { createHelloGreeting } from './modules/greeter.module';
     "types": "src/index.d.ts"
 }
 ```
+
+Mentioning the types is optional but mentioning it in the package's package.json helps TypeScript locate and use the associated TypeScript definition file (.d.ts) for your package. The following are its benefits:
+
+* Automatic Type Inference - hen TypeScript users install your package via npm or yarn, TypeScript automatically looks for the types field in your package's package.json. If TypeScript finds a types field, it uses the specified path to locate the TypeScript definition file provided by your package.
+
+* Type Checking and IntelliSense Support - Once TypeScript locates the TypeScript definition file specified in the types field, it automatically uses it to provide type checking and IntelliSense support for the package's API. TypeScript users can import symbols from your package and receive accurate type information and autocomplete suggestions based on the definitions in the TypeScript definition file.
+
+* Simplified Usage - Specifying the types field in your package's package.json simplifies the process for TypeScript users by providing a direct path to the type definitions. Users don't need to manually configure TypeScript paths or search for type definitions in the node_modules directory.
