@@ -68,7 +68,7 @@ import { createHelloGreeting } from './modules/greeter.module.js';
 export { createHelloGreeting };
 ```
 
-#### Testing the ES6 npm package
+#### Testing the ES6 compatibility of the package
 
 1. To test the package locally, execute the `npm link` command in the directory containing the package. This command creates a symbolic link from the global `node_modules` that points to the package currently being implemented.
 
@@ -124,3 +124,20 @@ Mentioning the types is optional but mentioning it in the package's package.json
 * Automatic Type Inference, Type Checking, and IntelliSense Support.
 
 * Simplified Usage - Specifying the types field in your package's package.json simplifies the process for TypeScript users by providing a direct path to the type definitions. Users don't need to manually configure TypeScript paths or search for type definitions in the node_modules directory.
+
+#### Testing the Typescript of the package
+
+1. Go the testing dfirectory created when testing the ES6 support then install the Typescript execute package: `npm i tsx`
+
+2. Create a typescript file named `testrun.ts` with the following typescript code
+
+```
+import {createHelloGreeting} from 'skeleton-npm';
+
+const greeting: string = createHelloGreeting('Adrian');
+console.log(greeting); 
+```
+
+3. Execute the typescript code using: `npx tsx testrun.ts`
+
+![Testing Typescript support of the package](demo_materials/Testing_Typescript_Support.png)
