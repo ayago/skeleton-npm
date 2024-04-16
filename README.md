@@ -121,8 +121,6 @@ export { createHelloGreeting } from './modules/greeter.module';
 
 Mentioning the types is optional but mentioning it in the package's package.json helps TypeScript locate and use the associated TypeScript definition file (.d.ts) for your package. The following are its benefits:
 
-* Automatic Type Inference - hen TypeScript users install your package via npm or yarn, TypeScript automatically looks for the types field in your package's package.json. If TypeScript finds a types field, it uses the specified path to locate the TypeScript definition file provided by your package.
-
-* Type Checking and IntelliSense Support - Once TypeScript locates the TypeScript definition file specified in the types field, it automatically uses it to provide type checking and IntelliSense support for the package's API. TypeScript users can import symbols from your package and receive accurate type information and autocomplete suggestions based on the definitions in the TypeScript definition file.
+* Automatic Type Inference, Type Checking, and IntelliSense Support.
 
 * Simplified Usage - Specifying the types field in your package's package.json simplifies the process for TypeScript users by providing a direct path to the type definitions. Users don't need to manually configure TypeScript paths or search for type definitions in the node_modules directory.
